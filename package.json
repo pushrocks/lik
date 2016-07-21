@@ -1,0 +1,29 @@
+{
+  "name": "lik",
+  "version": "1.0.0",
+  "description": "light little helpers for node",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "(npmts)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/pushrocks/lik.git"
+  },
+  "author": "Lossless GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/pushrocks/lik/issues"
+  },
+  "homepage": "https://gitlab.com/pushrocks/lik#README",
+  "devDependencies": {
+    "npmts-g": "^5.2.6",
+    "should": "^10.0.0",
+    "typings-test": "^1.0.1"
+  },
+  "dependencies": {
+    "@types/q": "^0.0.27",
+    "q": "^1.4.1"
+  }
+}
