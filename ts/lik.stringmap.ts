@@ -32,4 +32,11 @@ export class Stringmap {
     checkString(stringArg:string):boolean{
         return this._stringArray.indexOf(stringArg) != -1;
     }
+
+    /**
+     * checks stringPresence with minimatch
+     */
+    checkMinimatch(stringArg:string){
+
+    }
 }

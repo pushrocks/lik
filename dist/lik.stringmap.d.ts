@@ -16,4 +16,8 @@ export declare class Stringmap {
      * check if string is in Stringmap
      */
     checkString(stringArg: string): boolean;
+    /**
+     * checks stringPresence with minimatch
+     */
+    checkMinimatch(stringArg: string): void;
 }
