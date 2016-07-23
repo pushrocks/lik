@@ -27,5 +27,14 @@ describe("lik",function(){
             testStringmap.removeString(testString2);
             testStringmap.checkString(testString2).should.be.false();
         });
+        it("should register a function to trigger when empty",function(){
+            testStringmap.registerUntilTrue(
+                () => {return testStringmap.checkIsEmpty()},
+                () => {console.log("Stringmap now is empty")}
+            );
+        });
+        it("should remove wipe and then notify",function(){
+            testStringmap.wipe();
+        })
     })
 });
