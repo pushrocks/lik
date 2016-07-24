@@ -22,6 +22,9 @@ describe("lik",function(){
             testStringmap.checkString(testString1).should.be.true();
             testStringmap.checkString(testString2).should.be.true();
             testStringmap.checkString(testString3).should.be.true();
+            testStringmap.checkMinimatch("*String1").should.be.true();
+            testStringmap.checkMinimatch("*String2").should.be.true();
+            testStringmap.checkMinimatch("*String4").should.be.false();
         });
         it("should remove a string from Stringmap",function(){
             testStringmap.removeString(testString2);
