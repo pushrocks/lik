@@ -39,5 +39,35 @@ describe("lik",function(){
         it("should remove wipe and then notify",function(){
             testStringmap.wipe();
         })
+    });
+    describe("Objectmap",function(){
+        interface ITestObject {
+            propOne:string;
+            propTwo:string;
+        }
+        let testObjectmap:lik.Objectmap;
+        let testObject1:ITestObject = {
+            propOne: "hello",
+            propTwo: "hello2"
+        };
+        let testObject2:ITestObject = {
+            propOne: "hello",
+            propTwo: "hello2"
+        };
+        it("should correctly instantiate an Objectmap",function(){
+            testObjectmap = new lik.Objectmap();
+            testObjectmap.should.be.instanceof(lik.Objectmap);
+        });
+        it("should correctly add an object to Objectmap",function(){
+            testObjectmap.add(testObject1);
+            testObjectmap.checkForObject(testObject1).should.be.true;
+            testObjectmap.checkForObject(testObject2).should.be.false;
+        });
+        it("should correctly remove an object to Objectmap",function(){
+            testObjectmap.add(testObject2);
+            testObjectmap.remove(testObject1);
+            testObjectmap.checkForObject(testObject1).should.be.false;
+            testObjectmap.checkForObject(testObject2).should.be.true;
+        });
     })
 });

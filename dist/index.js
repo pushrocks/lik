@@ -4,4 +4,5 @@ function __export(m) {
 }
 // import modules
 __export(require("./lik.stringmap"));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBRUEsaUJBQWlCO0FBRWpCLGlCQUFjLGlCQUFpQixDQUFDLEVBQUEifQ==
+__export(require("./lik.objectmap"));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBRUEsaUJBQWlCO0FBRWpCLGlCQUFjLGlCQUFpQixDQUFDLEVBQUE7QUFDaEMsaUJBQWMsaUJBQWlCLENBQUMsRUFBQSJ9

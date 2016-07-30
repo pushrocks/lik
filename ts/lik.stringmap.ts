@@ -27,7 +27,7 @@ export class Stringmap {
      */
     removeString(stringArg:string){
         for (let keyArg in this._stringArray){
-            if(this._stringArray[keyArg] == stringArg){
+            if(this._stringArray[keyArg] === stringArg){
                 this._stringArray.splice(parseInt(keyArg),1);
             };
         };
@@ -66,7 +66,7 @@ export class Stringmap {
      * checks if the Stringmap is empty
      */
     checkIsEmpty(){
-        return (this._stringArray.length == 0);
+        return (this._stringArray.length === 0);
     }
 
     // trigger registering
@@ -88,7 +88,7 @@ export class Stringmap {
         this._triggerUntilTrueFunctionArray.push(
             () => {
                 let result = functionArg();
-                if(result == true){
+                if(result === true){
                     doFunctionArg();
                 }
                 return result;
