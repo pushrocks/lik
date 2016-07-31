@@ -69,5 +69,10 @@ describe("lik",function(){
             testObjectmap.checkForObject(testObject1).should.be.false;
             testObjectmap.checkForObject(testObject2).should.be.true;
         });
+        it("should correctly run a function forEach map object",function(){
+            testObjectmap.forEach(itemArg => {
+                itemArg.should.have.ownProperty("propOne");
+            })
+        })
     })
 });
