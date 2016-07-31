@@ -41,7 +41,7 @@ export class Objectmap {
      * run function for each item in Objectmap
      */
     forEach(functionArg:IObjectmapForEach){
-        this.objectArray.forEach(functionArg);
+        return this.objectArray.forEach(functionArg);
     }
 
     /**
