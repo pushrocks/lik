@@ -10,6 +10,15 @@ export interface IObjectmapForEach {
  */
 export class Objectmap {
     private objectArray = [];
+
+    /**
+     * returns a new instance
+     */
+    constructor(){
+
+    };
+
+
     /**
      * add object to Objectmap
      */
