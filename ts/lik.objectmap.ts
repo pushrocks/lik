@@ -59,6 +59,8 @@ export class Objectmap {
         let resultArray = this.objectArray.filter(findFunction);
         if (resultArray.length > 0){
             return resultArray[0];
+        } else {
+            return undefined;
         };
     }
 
