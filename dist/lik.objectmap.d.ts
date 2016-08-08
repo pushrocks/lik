@@ -1,13 +1,13 @@
-export interface IObjectmapForEachFunction {
-    (itemArg: any): void;
+export interface IObjectmapForEachFunction<T> {
+    (itemArg: T): void;
 }
-export interface IObjectmapFindFunction {
-    (itemArg: any): boolean;
+export interface IObjectmapFindFunction<T> {
+    (itemArg: T): boolean;
 }
 /**
  * allows keeping track of objects
  */
-export declare class Objectmap {
+export declare class Objectmap<T> {
     private objectArray;
     /**
      * returns a new instance
@@ -16,23 +16,23 @@ export declare class Objectmap {
     /**
      * add object to Objectmap
      */
-    add(objectArg: any): void;
+    add(objectArg: T): void;
     /**
      * remove object from Objectmap
      */
-    remove(objectArg: any): void;
+    remove(objectArg: T): void;
     /**
      * check if object is in Objectmap
      */
-    checkForObject(objectArg: any): number;
+    checkForObject(objectArg: T): boolean;
     /**
      * find object
      */
-    find(findFunction: IObjectmapFindFunction): any;
+    find(findFunction: IObjectmapFindFunction<T>): T;
     /**
      * run function for each item in Objectmap
      */
-    forEach(functionArg: IObjectmapForEachFunction): void;
+    forEach(functionArg: IObjectmapForEachFunction<T>): void;
     /**
      * wipe Objectmap
      */
