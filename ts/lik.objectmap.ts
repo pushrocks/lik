@@ -1,9 +1,14 @@
 import * as plugins from "./lik.plugins";
 
 
-export interface IObjectmapForEach {
-    (itemArg):void
-}
+export interface IObjectmapForEachFunction {
+    (itemArg:any):void
+};
+
+export interface IObjectmapFindFunction {
+    (itemArg:any):boolean
+};
+
 
 /**
  * allows keeping track of objects
@@ -46,10 +51,22 @@ export class Objectmap {
         return this.objectArray.indexOf(objectArg !== -1)
     };
 
+
+    /**
+     * find object
+     */
+    find(findFunction:IObjectmapFindFunction){
+        let resultArray = this.objectArray.filter(findFunction);
+        if (resultArray.length > 0){
+            return resultArray[0];
+        };
+    }
+
+
     /**
      * run function for each item in Objectmap
      */
-    forEach(functionArg:IObjectmapForEach){
+    forEach(functionArg:IObjectmapForEachFunction){
         return this.objectArray.forEach(functionArg);
     }
 

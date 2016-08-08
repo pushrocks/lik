@@ -1,5 +1,8 @@
-export interface IObjectmapForEach {
+export interface IObjectmapForEachFunction {
     (itemArg: any): void;
+}
+export interface IObjectmapFindFunction {
+    (itemArg: any): boolean;
 }
 /**
  * allows keeping track of objects
@@ -23,9 +26,13 @@ export declare class Objectmap {
      */
     checkForObject(objectArg: any): number;
     /**
+     * find object
+     */
+    find(findFunction: IObjectmapFindFunction): any;
+    /**
      * run function for each item in Objectmap
      */
-    forEach(functionArg: IObjectmapForEach): void;
+    forEach(functionArg: IObjectmapForEachFunction): void;
     /**
      * wipe Objectmap
      */

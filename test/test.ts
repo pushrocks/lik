@@ -73,6 +73,12 @@ describe("lik",function(){
             testObjectmap.forEach(itemArg => {
                 itemArg.should.have.ownProperty("propOne");
             })
-        })
+        });
+        it("should correctly find an object",function(){
+            let myObject = {item1: "hello",item2: "hello2"};
+            testObjectmap.add(myObject);
+            let referenceObject = testObjectmap.find((itemArg) => {return (itemArg.item1 == "hello")});
+            (myObject == referenceObject).should.be.true();
+        });
     })
 });
