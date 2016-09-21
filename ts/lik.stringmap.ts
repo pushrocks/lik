@@ -21,6 +21,15 @@ export class Stringmap {
     }
 
     /**
+     * like addString, but accepts an array of strings
+     */
+    addStringArray(stringArrayArg: string[]) {
+        for (let stringItem of stringArrayArg){
+            this.addString(stringItem)
+        }
+    }
+
+    /**
      * removes a string from Stringmap
      */
     removeString(stringArg: string) {

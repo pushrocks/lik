@@ -9,5 +9,7 @@ We recommend the use of TypeScript for good intellisense.
 
 ```typescript
 // import any tool that you need from lik
-import {Stringmap} from "lik";
+import { Stringmap, Objectmap } from "lik";
 ```
+
+For a class overview, please read the docs
