@@ -13,6 +13,10 @@ export declare class Stringmap {
      */
     addString(stringArg: string): void;
     /**
+     * like addString, but accepts an array of strings
+     */
+    addStringArray(stringArrayArg: string[]): void;
+    /**
      * removes a string from Stringmap
      */
     removeString(stringArg: string): void;
