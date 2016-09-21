@@ -1,7 +1,7 @@
 /**
- * allows you to easily keep track of a bunch of strings;
+ * allows you to easily keep track of a bunch of strings
  */
-export interface triggerFunction {
+export interface ITriggerFunction {
     (): boolean;
 }
 export declare class Stringmap {
@@ -33,11 +33,15 @@ export declare class Stringmap {
      */
     checkIsEmpty(): boolean;
     /**
-     * notifies triggers
+     * gets a cloned copy of the current string Array
      */
-    private notifyTrigger();
+    getStringArray(): string[];
     /**
      * register a new trigger
      */
-    registerUntilTrue(functionArg: triggerFunction, doFunctionArg: any): void;
+    registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg: any): void;
+    /**
+     * notifies triggers
+     */
+    private notifyTrigger();
 }
