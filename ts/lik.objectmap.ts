@@ -29,6 +29,15 @@ export class Objectmap<T> {
     }
 
     /**
+     * like .add but adds an whole array of objects
+     */
+    addArray(objectArrayArg: T[]) {
+        for (let item of objectArrayArg) {
+            this.add(item)
+        }
+    }
+
+    /**
      * remove object from Objectmap
      */
     remove(objectArg: T) {
@@ -56,7 +65,7 @@ export class Objectmap<T> {
         if (resultArray.length > 0) {
             return resultArray[0]
         } else {
-            return undefined
+            return null
         }
     }
 

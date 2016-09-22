@@ -4,3 +4,4 @@ import * as plugins from './lik.plugins'
 
 export * from './lik.stringmap'
 export * from './lik.objectmap'
+export * from './lik.observablemap'

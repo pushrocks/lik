@@ -18,6 +18,10 @@ export declare class Objectmap<T> {
      */
     add(objectArg: T): void;
     /**
+     * like .add but adds an whole array of objects
+     */
+    addArray(objectArrayArg: T[]): void;
+    /**
      * remove object from Objectmap
      */
     remove(objectArg: T): void;
