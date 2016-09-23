@@ -22,7 +22,23 @@ We recommend the use of TypeScript for good intellisense.
 
 ```typescript
 // import any tool that you need from lik
-import { Stringmap, Objectmap } from "lik";
+import { Stringmap, Objectmap, Observablemap } from "lik";
 ```
 
-For a class overview, please read the docs
+### class Stringmap
+Stringmap allows you to keep track of strings. It allows you to register triggers for certain events
+like when a certain string is removed or added to the map
+
+### class Objectmap
+Sometimes you need to keep track of objects, but implementing logic for removing, finding or updating is tedious.
+Objectmap takes care of keeping track of objects for you.
+
+### class Observablemap
+Event Emitters are nice. However often times you end up with registering multiple listeners for the exact same thing.
+Observables have a smaller footprint and a more manageable subscribe logic.
+Observablemap registers only one rxjs observable per event and then continues to reference
+the same observable that you can subscribe to.
+
+**For a detailed class overview, please take a look at the API docs**
+
+[![npm](https://push.rocks/assets/repo-header.svg)](https://push.rocks)
