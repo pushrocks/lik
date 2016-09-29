@@ -41,4 +41,8 @@ export declare class Objectmap<T> {
      * wipe Objectmap
      */
     wipe(): void;
+    /**
+     * returns a cloned array of all the objects currently in the Objectmap
+     */
+    getArray(): T[];
 }

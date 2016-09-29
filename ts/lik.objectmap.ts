@@ -82,4 +82,11 @@ export class Objectmap<T> {
     wipe() {
         this.objectArray = []
     }
+
+    /**
+     * returns a cloned array of all the objects currently in the Objectmap
+     */
+    getArray() {
+        return plugins.lodash.cloneDeep(this.objectArray)
+    }
 }
