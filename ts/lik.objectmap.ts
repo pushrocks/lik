@@ -66,14 +66,14 @@ export class Objectmap<T> {
     /**
      * gets an object in the Observablemap and removes it, so it can't be retrieved again
      */
-    getOneAndRemove() {
+    getOneAndRemove(): T {
         return this.objectArray.shift()
     }
 
     /**
      * finds a specific element and then removes it
      */
-    findOneAndRemove(findFunction) {
+    findOneAndRemove(findFunction): T {
         let foundElement = this.find(findFunction)
         if (foundElement) {
             this.remove(foundElement)
