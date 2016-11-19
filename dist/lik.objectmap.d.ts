@@ -30,6 +30,10 @@ export declare class Objectmap<T> {
      */
     find(findFunction: IObjectmapFindFunction<T>): T;
     /**
+     * finds a specific element and then removes it
+     */
+    findOneAndRemove(findFunction: any): T;
+    /**
      * run function for each item in Objectmap
      */
     forEach(functionArg: IObjectmapForEachFunction<T>): void;
@@ -38,13 +42,13 @@ export declare class Objectmap<T> {
      */
     getOneAndRemove(): T;
     /**
-     * finds a specific element and then removes it
-     */
-    findOneAndRemove(findFunction: any): T;
-    /**
      * returns a cloned array of all the objects currently in the Objectmap
      */
     getArray(): T[];
+    /**
+     * check if Objectmap ist empty
+     */
+    isEmpty(): boolean;
     /**
      * remove object from Objectmap
      */

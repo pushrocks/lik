@@ -57,6 +57,17 @@ export class Objectmap<T> {
     }
 
     /**
+     * finds a specific element and then removes it
+     */
+    findOneAndRemove(findFunction): T {
+        let foundElement = this.find(findFunction)
+        if (foundElement) {
+            this.remove(foundElement)
+        }
+        return foundElement
+    }
+
+    /**
      * run function for each item in Objectmap
      */
     forEach(functionArg: IObjectmapForEachFunction<T>) {
@@ -71,21 +82,21 @@ export class Objectmap<T> {
     }
 
     /**
-     * finds a specific element and then removes it
-     */
-    findOneAndRemove(findFunction): T {
-        let foundElement = this.find(findFunction)
-        if (foundElement) {
-            this.remove(foundElement)
-        }
-        return foundElement
-    }
-
-    /**
      * returns a cloned array of all the objects currently in the Objectmap
      */
     getArray() {
         return plugins.lodash.cloneDeep(this.objectArray)
+    }
+
+    /**
+     * check if Objectmap ist empty
+     */
+    isEmpty(): boolean {
+        if (this.objectArray.length === 0) {
+            return true
+        } else {
+            return false
+        }
     }
 
     /**
