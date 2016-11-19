@@ -1,7 +1,6 @@
 import 'typings-test'
 import * as events from 'events'
 import * as rx from 'rxjs/Rx'
-import * as lodash from 'lodash'
 import * as should from 'should'
 
 import lik = require('../dist/index')
@@ -99,7 +98,14 @@ describe('lik',function(){
             let myObject = {propOne : 'test1', propTwo: 'wow, how awesome'}
             testObjectmap.add(myObject)
             let clonedArray = testObjectmap.getArray()
-            should(lodash.isEqual(clonedArray[clonedArray.length - 1],myObject)).be.true()
+            should(clonedArray[clonedArray.length - 1]).eql(myObject)
+        })
+        it('should get one object and then remove it', function() {
+            let originalLength = testObjectmap.getArray().length
+            let oneObject = testObjectmap.getOneAndRemove()
+            should(oneObject).not.be.null()
+            should(testObjectmap.getArray().length).equal(originalLength - 1)
+            should(testObjectmap.getArray()).not.containEql(oneObject)
         })
     })
     describe('Observablemap',function(){

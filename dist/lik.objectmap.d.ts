@@ -22,10 +22,6 @@ export declare class Objectmap<T> {
      */
     addArray(objectArrayArg: T[]): void;
     /**
-     * remove object from Objectmap
-     */
-    remove(objectArg: T): void;
-    /**
      * check if object is in Objectmap
      */
     checkForObject(objectArg: T): boolean;
@@ -38,11 +34,23 @@ export declare class Objectmap<T> {
      */
     forEach(functionArg: IObjectmapForEachFunction<T>): void;
     /**
-     * wipe Objectmap
+     * gets an object in the Observablemap and removes it, so it can't be retrieved again
      */
-    wipe(): void;
+    getOneAndRemove(): T;
+    /**
+     * finds a specific element and then removes it
+     */
+    findOneAndRemove(findFunction: any): T;
     /**
      * returns a cloned array of all the objects currently in the Objectmap
      */
     getArray(): T[];
+    /**
+     * remove object from Objectmap
+     */
+    remove(objectArg: T): void;
+    /**
+     * wipe Objectmap
+     */
+    wipe(): void;
 }

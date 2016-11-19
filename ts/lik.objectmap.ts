@@ -38,19 +38,6 @@ export class Objectmap<T> {
     }
 
     /**
-     * remove object from Objectmap
-     */
-    remove(objectArg: T) {
-        let replacmentArray = []
-        for (let item of this.objectArray) {
-            if (item !== objectArg) {
-                replacmentArray.push(item)
-            }
-        }
-        this.objectArray = replacmentArray
-    }
-
-    /**
      * check if object is in Objectmap
      */
     checkForObject(objectArg: T) {
@@ -77,10 +64,21 @@ export class Objectmap<T> {
     }
 
     /**
-     * wipe Objectmap
+     * gets an object in the Observablemap and removes it, so it can't be retrieved again
      */
-    wipe() {
-        this.objectArray = []
+    getOneAndRemove() {
+        return this.objectArray.shift()
+    }
+
+    /**
+     * finds a specific element and then removes it
+     */
+    findOneAndRemove(findFunction) {
+        let foundElement = this.find(findFunction)
+        if (foundElement) {
+            this.remove(foundElement)
+        }
+        return foundElement
     }
 
     /**
@@ -88,5 +86,25 @@ export class Objectmap<T> {
      */
     getArray() {
         return plugins.lodash.cloneDeep(this.objectArray)
+    }
+
+    /**
+     * remove object from Objectmap
+     */
+    remove(objectArg: T) {
+        let replacementArray = []
+        for (let item of this.objectArray) {
+            if (item !== objectArg) {
+                replacementArray.push(item)
+            }
+        }
+        this.objectArray = replacementArray
+    }
+
+    /**
+     * wipe Objectmap
+     */
+    wipe() {
+        this.objectArray = []
     }
 }
