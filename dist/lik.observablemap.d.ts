@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import * as plugins from './lik.plugins';
 import { Objectmap } from './lik.objectmap';
 import { Observable } from 'rxjs/Rx';

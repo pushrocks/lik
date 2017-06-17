@@ -17,11 +17,7 @@
     "url": "https://gitlab.com/pushrocks/lik/issues"
   },
   "homepage": "https://gitlab.com/pushrocks/lik#README",
-  "devDependencies": {
-    "@types/should": "^8.1.30",
-    "should": "^11.2.1",
-    "typings-test": "^1.0.3"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@types/lodash": "^4.14.62",
     "@types/minimatch": "2.x.x",
@@ -30,6 +26,8 @@
     "minimatch": "^3.0.3",
     "q": "^1.5.0",
     "rxjs": "^5.3.0",
+    "smartq": "^1.1.1",
+    "tapbundle": "^1.0.14",
     "typings-global": "^1.0.14"
   }
 }
