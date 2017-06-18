@@ -59,7 +59,7 @@ export class Objectmap<T> {
   /**
    * finds a specific element and then removes it
    */
-  findOneAndRemove (findFunction): T {
+  findOneAndRemove (findFunction: IObjectmapFindFunction<T>): T {
     let foundElement = this.find(findFunction)
     if (foundElement) {
       this.remove(foundElement)

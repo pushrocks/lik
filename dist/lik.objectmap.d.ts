@@ -32,7 +32,7 @@ export declare class Objectmap<T> {
     /**
      * finds a specific element and then removes it
      */
-    findOneAndRemove(findFunction: any): T;
+    findOneAndRemove(findFunction: IObjectmapFindFunction<T>): T;
     /**
      * run function for each item in Objectmap
      */
