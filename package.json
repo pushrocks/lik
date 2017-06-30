@@ -1,6 +1,6 @@
 {
   "name": "lik",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "light little helpers for node",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
