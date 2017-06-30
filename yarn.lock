@@ -15,7 +15,11 @@
   dependencies:
     "@types/chai" "*"
 
-"@types/chai@*", "@types/chai@^3.4.35":
+"@types/chai@*":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.1.tgz#37fea779617cfec3fd2b19a0247e8bbdd5133bf6"
+
+"@types/chai@^3.4.35":
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.5.2.tgz#c11cd2817d3a401b7ba0f5a420f35c56139b1c1e"
 
@@ -27,9 +31,9 @@
   version "2.0.29"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-2.0.29.tgz#5002e14f75e2d71e564281df0431c8c1b4a2a36a"
 
-"@types/node@*", "@types/node@^7.0.29":
-  version "7.0.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.31.tgz#80ea4d175599b2a00149c29a10a4eb2dff592e86"
+"@types/node@*":
+  version "8.0.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.6.tgz#ed2c3e011cb51ccd3cf874989130f1b9ffe06069"
 
 "@types/promises-a-plus@*":
   version "0.0.27"
@@ -39,9 +43,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.0.0.tgz#57e5465d665b370d4217e69b344b20faa6b724f5"
 
-"@types/shelljs@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.6.0.tgz#090b705c102ce7fc5c0c5ea9b524418ff15840df"
+"@types/shelljs@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.7.2.tgz#c2bdb3fe80cd7a3da08750ca898ae44c589671f3"
   dependencies:
     "@types/node" "*"
 
@@ -240,9 +244,17 @@ semver@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-shelljs@^0.7.4, shelljs@^0.7.6:
+shelljs@^0.7.4:
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.7.tgz#b2f5c77ef97148f4b4f6e22682e10bba8667cff1"
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
+shelljs@^0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
@@ -266,7 +278,7 @@ smartdelay@^1.0.3:
     smartq "^1.1.1"
     typings-global "^1.0.16"
 
-smartq@^1.1.0, smartq@^1.1.1:
+smartq@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/smartq/-/smartq-1.1.1.tgz#efb358705260d41ae18aef7ffd815f7b6fe17dd3"
   dependencies:
@@ -274,14 +286,15 @@ smartq@^1.1.0, smartq@^1.1.1:
     typings-global "^1.0.14"
 
 smartshell@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/smartshell/-/smartshell-1.0.6.tgz#27b1c79029784abe72ac7e91fe698b7ebecc6629"
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/smartshell/-/smartshell-1.0.8.tgz#1535756c0fe8069f7e6da1e3f9cb6c8f77094e42"
   dependencies:
-    "@types/shelljs" "^0.6.0"
+    "@types/shelljs" "^0.7.2"
     "@types/which" "^1.0.28"
-    shelljs "^0.7.6"
-    smartq "^1.1.0"
-    which "^1.2.12"
+    shelljs "^0.7.8"
+    smartq "^1.1.1"
+    typings-global "^1.0.19"
+    which "^1.2.14"
 
 symbol-observable@^1.0.1:
   version "1.0.4"
@@ -317,15 +330,14 @@ typings-global@^1.0.14:
     semver "^5.3.0"
     shelljs "^0.7.4"
 
-typings-global@^1.0.16:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/typings-global/-/typings-global-1.0.17.tgz#41edc331ccec3168289adc8849e1e255efbe7152"
+typings-global@^1.0.16, typings-global@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/typings-global/-/typings-global-1.0.19.tgz#3376a72d4de1e5541bf5702248ff64c3e6ea316c"
   dependencies:
-    "@types/node" "^7.0.29"
     semver "^5.3.0"
     smartshell "^1.0.6"
 
-which@^1.2.12:
+which@^1.2.14:
   version "1.2.14"
   resolved "https://registry.yarnpkg.com/which/-/which-1.2.14.tgz#9a87c4378f03e827cecaf1acdf56c736c01c14e5"
   dependencies:
