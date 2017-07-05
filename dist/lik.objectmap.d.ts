@@ -15,8 +15,10 @@ export declare class Objectmap<T> {
     constructor();
     /**
      * add object to Objectmap
+     * returns false if the object is already in the map
+     * returns true if the object was added successfully
      */
-    add(objectArg: T): void;
+    add(objectArg: T): boolean;
     /**
      * like .add but adds an whole array of objects
      */

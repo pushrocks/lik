@@ -23,9 +23,18 @@ export class Objectmap<T> {
 
   /**
    * add object to Objectmap
+   * returns false if the object is already in the map
+   * returns true if the object was added successfully
    */
-  add (objectArg: T) {
-    this.objectArray.push(objectArg)
+  add (objectArg: T): boolean {
+    if (this.checkForObject(objectArg)) {
+      // the object is already in the objectmap
+      return false
+    } else {
+      // the object is not yet in the objectmap
+      this.objectArray.push(objectArg)
+      return true
+    }
   }
 
   /**

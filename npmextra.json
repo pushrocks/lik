@@ -5,6 +5,9 @@
     ]
   },
   "npmts": {
-    "coverageTreshold": 40
+    "coverageTreshold": 40,
+    "testConfig": {
+      "parallel": false
+    }
   } 
 }
