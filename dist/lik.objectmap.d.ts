@@ -38,7 +38,7 @@ export declare class Objectmap<T> {
     /**
      * run function for each item in Objectmap
      */
-    forEach(functionArg: IObjectmapForEachFunction<T>): void;
+    forEach(functionArg: IObjectmapForEachFunction<T>): Promise<void>;
     /**
      * gets an object in the Observablemap and removes it, so it can't be retrieved again
      */

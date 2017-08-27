@@ -79,8 +79,10 @@ export class Objectmap<T> {
   /**
    * run function for each item in Objectmap
    */
-  forEach (functionArg: IObjectmapForEachFunction<T>) {
-    return this.objectArray.forEach(functionArg)
+  async forEach (functionArg: IObjectmapForEachFunction<T>) {
+    for (let object of this.objectArray) {
+      await functionArg(object)
+    }
   }
 
   /**
