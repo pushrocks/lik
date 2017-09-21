@@ -5,7 +5,7 @@ import * as rx from 'rxjs/Rx'
 import * as smartq from 'smartq'
 
 // import the module
-import lik = require('../ts/index')
+import * as lik from '../ts/index'
 
 let object1 = {}
 let object2 = {}

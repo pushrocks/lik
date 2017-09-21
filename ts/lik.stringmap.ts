@@ -100,7 +100,7 @@ export class Stringmap {
     )
     this.notifyTrigger()
   }
-
+  
   /**
    * notifies triggers
    */
