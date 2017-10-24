@@ -46,10 +46,6 @@
   version "0.0.27"
   resolved "https://registry.yarnpkg.com/@types/promises-a-plus/-/promises-a-plus-0.0.27.tgz#c64651134614c84b8f5d7114ce8901d36a609780"
 
-"@types/q@1.x.x":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@types/q/-/q-1.0.5.tgz#02b9d43a1a8e7503d15ed2fecb15ebb18c519b1d"
-
 "@types/shelljs@^0.7.4":
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.7.4.tgz#137b5f31306eaff4de120ffe5b9d74b297809cfc"
@@ -293,10 +289,6 @@ path-parse@^1.0.5:
 pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
-
-q@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
 rechoir@^0.6.2:
   version "0.6.2"

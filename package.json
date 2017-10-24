@@ -23,10 +23,8 @@
   "dependencies": {
     "@types/lodash": "^4.14.74",
     "@types/minimatch": "3.x.x",
-    "@types/q": "1.x.x",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
-    "q": "^1.5.0",
     "rxjs": "^5.4.3",
     "smartq": "^1.1.6",
     "typings-global": "^1.0.20"
