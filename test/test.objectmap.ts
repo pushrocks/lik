@@ -1,7 +1,6 @@
 // import test framework
 import { expect, tap } from 'tapbundle'
 import * as events from 'events'
-import * as rx from 'rxjs/Rx'
 import * as smartq from 'smartq'
 
 // import the module
