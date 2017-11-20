@@ -45,7 +45,7 @@ tap.test('lik.Objectmap.remove() -> should correctly remove an object to Objectm
 
 tap.test('Objectmap.forEach -> should correctly run a function forEach map object', async () => {
   testObjectmap.forEach(itemArg => {
-    expect(itemArg).have.ownProperty('propOne')
+    expect(itemArg).to.contain('propOne')
   })
 })
 
@@ -61,7 +61,7 @@ tap.test('lik.Objectmap.getArray() -> should return a cloned array', async () =>
   let myObject = { propOne: 'test1', propTwo: 'wow, how awesome' }
   testObjectmap.add(myObject)
   let clonedArray = testObjectmap.getArray()
-  expect(clonedArray[ clonedArray.length - 1 ]).eql(myObject)
+  expect(clonedArray[ clonedArray.length - 1 ]).to.equal(myObject)
 })
 
 tap.test('should get one object and then remove it', async () => {

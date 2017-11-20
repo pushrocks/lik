@@ -2,56 +2,21 @@
 # yarn lockfile v1
 
 
-"@types/chai-as-promised@0.0.29":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@types/chai-as-promised/-/chai-as-promised-0.0.29.tgz#43d52892aa998e185a3de3e2477edb8573be1d77"
-  dependencies:
-    "@types/chai" "*"
-    "@types/promises-a-plus" "*"
-
-"@types/chai-string@^1.1.30":
-  version "1.1.31"
-  resolved "https://registry.yarnpkg.com/@types/chai-string/-/chai-string-1.1.31.tgz#a22f75d713f69da8c5cf34f8bc808a62cd249405"
-  dependencies:
-    "@types/chai" "*"
-
-"@types/chai@*":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.4.tgz#fe86315d9a66827feeb16f73bc954688ec950e18"
-
-"@types/chai@^3.4.35":
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.5.2.tgz#c11cd2817d3a401b7ba0f5a420f35c56139b1c1e"
-
-"@types/glob@*":
-  version "5.0.32"
-  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.32.tgz#aec5cfe987c72f099fdb1184452986aa506d5e8f"
-  dependencies:
-    "@types/minimatch" "*"
-    "@types/node" "*"
+"@types/code@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/code/-/code-4.0.3.tgz#9c4de39f86eb3eba070146d2dab7dbc3f8eac35f"
 
 "@types/lodash@^4.14.74":
-  version "4.14.74"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.74.tgz#ac3bd8db988e7f7038e5d22bd76a7ba13f876168"
+  version "4.14.85"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.85.tgz#a16fbf942422f6eca5622b6910492c496c35069b"
 
-"@types/minimatch@*", "@types/minimatch@3.x.x":
+"@types/minimatch@3.x.x":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.1.tgz#b683eb60be358304ef146f5775db4c0e3696a550"
 
-"@types/node@*":
-  version "8.0.29"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.29.tgz#4d6b33df66b15611b40452a581c40d9c94341ba1"
-
-"@types/promises-a-plus@*":
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/@types/promises-a-plus/-/promises-a-plus-0.0.27.tgz#c64651134614c84b8f5d7114ce8901d36a609780"
-
-"@types/shelljs@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.7.4.tgz#137b5f31306eaff4de120ffe5b9d74b297809cfc"
-  dependencies:
-    "@types/glob" "*"
-    "@types/node" "*"
+"@types/node@^8.0.33":
+  version "8.0.53"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz#396b35af826fa66aad472c8cb7b8d5e277f4e6d8"
 
 "@types/which@^1.0.28":
   version "1.0.28"
@@ -60,10 +25,6 @@
 ansi-256-colors@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ansi-256-colors/-/ansi-256-colors-1.1.0.tgz#910de50efcc7c09e3d82f2f87abd6b700c18818a"
-
-assertion-error@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/assertion-error/-/assertion-error-1.0.2.tgz#13ca515d86206da0bac66e834dd397d87581094c"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -87,37 +48,15 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-chai-as-promised@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-6.0.0.tgz#1a02a433a6f24dafac63b9c96fa1684db1aa8da6"
+code@^5.1.0:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/code/-/code-5.1.2.tgz#e3310c2078ca7dc0b49b9c39a8b0a7b06bd75efe"
   dependencies:
-    check-error "^1.0.2"
-
-chai-string@^1.3.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/chai-string/-/chai-string-1.4.0.tgz#359140c051d36a4e4b1a5fc6b910152f438a8d49"
-
-chai@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/chai/-/chai-3.5.0.tgz#4d02637b067fe958bdbfdd3a40ec56fef7373247"
-  dependencies:
-    assertion-error "^1.0.1"
-    deep-eql "^0.1.3"
-    type-detect "^1.0.0"
-
-check-error@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
+    hoek "5.x.x"
 
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
-
-deep-eql@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/deep-eql/-/deep-eql-0.1.3.tgz#ef558acab8de25206cd713906d74e56930eb69f2"
-  dependencies:
-    type-detect "0.1.1"
 
 define-properties@^1.1.2:
   version "1.1.2"
@@ -135,8 +74,8 @@ early@^2.1.1:
     typings-global "^1.0.16"
 
 es-abstract@^1.5.1:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.8.2.tgz#25103263dc4decbda60e0c737ca32313518027ee"
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.9.0.tgz#690829a07cae36b222e7fd9b75c0d0573eb25227"
   dependencies:
     es-to-primitive "^1.1.1"
     function-bind "^1.1.1"
@@ -184,6 +123,10 @@ has@^1.0.1:
   resolved "https://registry.yarnpkg.com/has/-/has-1.0.1.tgz#8461733f538b0837c9361e39a9ab9e9704dc2f28"
   dependencies:
     function-bind "^1.0.2"
+
+hoek@5.x.x:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.2.tgz#d2f2c95d36fe7189cf8aa8c237abc1950eca1378"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -258,8 +201,8 @@ minimist@^1.2.0:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
 nan@^2.3.2:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
 
 object-keys@^1.0.8:
   version "1.0.11"
@@ -297,8 +240,8 @@ rechoir@^0.6.2:
     resolve "^1.1.6"
 
 resolve@^1.1.6:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.4.0.tgz#a75be01c53da25d934a98ebd0e4c4a7312f92a86"
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
   dependencies:
     path-parse "^1.0.5"
 
@@ -315,19 +258,16 @@ shelljs@^0.7.8:
     rechoir "^0.6.2"
 
 smartchai@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/smartchai/-/smartchai-1.0.3.tgz#de6d010bb8b5aef24cb70b31a5f5334e8c41b72f"
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/smartchai/-/smartchai-1.0.8.tgz#a074836f4ddd4b98c50f1e7ae9e8e8ad9f6f1902"
   dependencies:
-    "@types/chai" "^3.4.35"
-    "@types/chai-as-promised" "0.0.29"
-    "@types/chai-string" "^1.1.30"
-    chai "^3.5.0"
-    chai-as-promised "^6.0.0"
-    chai-string "^1.3.0"
+    "@types/code" "^4.0.3"
+    code "^5.1.0"
+    typings-global "^1.0.20"
 
 smartdelay@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/smartdelay/-/smartdelay-1.0.3.tgz#5fd44dad77262d110702f0293efa80c072cfb579"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/smartdelay/-/smartdelay-1.0.4.tgz#791c1a4ee6770494064c10b1d2d2b8e6f3105b82"
   dependencies:
     smartq "^1.1.1"
     typings-global "^1.0.16"
@@ -340,20 +280,24 @@ smartq@^1.1.1, smartq@^1.1.6:
     util.promisify "^1.0.0"
 
 smartshell@^1.0.6:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/smartshell/-/smartshell-1.0.18.tgz#b84ccc65cedf3a875bf676cec78ee07f4b4aa9e5"
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/smartshell/-/smartshell-1.0.19.tgz#459c7a9fab8a25007848ffc711b7a817dd6ffc00"
   dependencies:
-    "@types/shelljs" "^0.7.4"
     "@types/which" "^1.0.28"
     shelljs "^0.7.8"
     smartq "^1.1.6"
-    typings-global "^1.0.20"
+    typings-global "^1.0.23"
     which "^1.3.0"
 
+symbol-tree@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
+
 tapbundle@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/tapbundle/-/tapbundle-1.1.1.tgz#ec4172c0e82a77b1f6133fef2606311ede28a62d"
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/tapbundle/-/tapbundle-1.1.8.tgz#e08aee0e100a830d8a26a583a85d37ce53312e02"
   dependencies:
+    "@types/node" "^8.0.33"
     early "^2.1.1"
     leakage "^0.3.0"
     smartchai "^1.0.3"
@@ -361,17 +305,9 @@ tapbundle@^1.1.1:
     smartq "^1.1.1"
     typings-global "^1.0.19"
 
-type-detect@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-0.1.1.tgz#0ba5ec2a885640e470ea4e8505971900dac58822"
-
-type-detect@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-1.0.0.tgz#762217cc06db258ec48908a1298e8b95121e8ea2"
-
-typings-global@^1.0.14, typings-global@^1.0.16, typings-global@^1.0.19, typings-global@^1.0.20:
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/typings-global/-/typings-global-1.0.20.tgz#3da769c54db538247c5d877d1d9e97eb2ec981ff"
+typings-global@^1.0.14, typings-global@^1.0.16, typings-global@^1.0.19, typings-global@^1.0.20, typings-global@^1.0.23:
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/typings-global/-/typings-global-1.0.23.tgz#cdd085803049dd07d95b2e1475243c6b2db378ab"
   dependencies:
     semver "^5.3.0"
     smartshell "^1.0.6"

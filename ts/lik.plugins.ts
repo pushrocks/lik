@@ -1,12 +1,14 @@
 import 'typings-global'
-import * as smartq from 'smartq'
 import * as events from 'events'
 import * as lodash from 'lodash'
 import * as minimatch from 'minimatch'
+import * as smartq from 'smartq'
+const symbolTree = require('symbol-tree')
 
 export {
-  smartq,
   events,
   lodash,
-  minimatch
+  minimatch,
+  smartq,
+  symbolTree
 }
