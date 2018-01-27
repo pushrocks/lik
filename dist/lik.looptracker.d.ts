@@ -1,4 +1,4 @@
-import { Objectmap } from './lik.objectmap';
+import { Objectmap } from "./lik.objectmap";
 export declare class LoopTracker<T> {
     referenceObjectMap: Objectmap<any>;
     constructor();

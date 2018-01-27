@@ -18,15 +18,21 @@
   },
   "homepage": "https://gitlab.com/pushrocks/lik#README",
   "devDependencies": {
+    "@types/node": "^9.4.0",
+    "cz-conventional-changelog": "^2.1.0",
     "tapbundle": "^1.1.1"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.74",
-    "@types/minimatch": "3.x.x",
+    "@types/lodash": "^4.14.97",
+    "@types/minimatch": "^3.0.3",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
     "smartq": "^1.1.6",
-    "symbol-tree": "^3.2.2",
-    "typings-global": "^1.0.20"
+    "symbol-tree": "^3.2.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

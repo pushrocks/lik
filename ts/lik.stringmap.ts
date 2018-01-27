@@ -1,86 +1,86 @@
-import * as plugins from './lik.plugins'
+import * as plugins from "./lik.plugins";
 
 /**
  * allows you to easily keep track of a bunch of strings
  */
 
 export interface ITriggerFunction {
-  (): boolean
+  (): boolean;
 }
 
 export class Stringmap {
-  private _stringArray: string[] = []
-  private _triggerUntilTrueFunctionArray: ITriggerFunction[] = []
-  constructor() { }
+  private _stringArray: string[] = [];
+  private _triggerUntilTrueFunctionArray: ITriggerFunction[] = [];
+  constructor() {}
   /**
    * add a string to the Stringmap
    */
-  addString (stringArg: string) {
-    this._stringArray.push(stringArg)
-    this.notifyTrigger()
+  addString(stringArg: string) {
+    this._stringArray.push(stringArg);
+    this.notifyTrigger();
   }
 
   /**
    * like addString, but accepts an array of strings
    */
-  addStringArray (stringArrayArg: string[]) {
+  addStringArray(stringArrayArg: string[]) {
     for (let stringItem of stringArrayArg) {
-      this.addString(stringItem)
+      this.addString(stringItem);
     }
   }
 
   /**
    * removes a string from Stringmap
    */
-  removeString (stringArg: string) {
+  removeString(stringArg: string) {
     for (let keyArg in this._stringArray) {
-      if (this._stringArray[ keyArg ] === stringArg) {
-        this._stringArray.splice(parseInt(keyArg), 1)
+      if (this._stringArray[keyArg] === stringArg) {
+        this._stringArray.splice(parseInt(keyArg), 1);
       }
     }
-    this.notifyTrigger()
+    this.notifyTrigger();
   }
 
   /**
    * wipes the Stringmap
    */
-  wipe () {
-    this._stringArray = []
-    this.notifyTrigger()
+  wipe() {
+    this._stringArray = [];
+    this.notifyTrigger();
   }
 
   /**
    * check if string is in Stringmap
    */
-  checkString (stringArg: string): boolean {
-    return this._stringArray.indexOf(stringArg) !== -1
+  checkString(stringArg: string): boolean {
+    return this._stringArray.indexOf(stringArg) !== -1;
   }
 
   /**
    * checks stringPresence with minimatch
    */
-  checkMinimatch (miniMatchStringArg: string): boolean {
-    let foundMatch: boolean = false
+  checkMinimatch(miniMatchStringArg: string): boolean {
+    let foundMatch: boolean = false;
     for (let stringItem of this._stringArray) {
       if (plugins.minimatch(stringItem, miniMatchStringArg)) {
-        foundMatch = true
+        foundMatch = true;
       }
     }
-    return foundMatch
+    return foundMatch;
   }
 
   /**
    * checks if the Stringmap is empty
    */
-  checkIsEmpty () {
-    return (this._stringArray.length === 0)
+  checkIsEmpty() {
+    return this._stringArray.length === 0;
   }
 
   /**
    * gets a cloned copy of the current string Array
    */
-  getStringArray () {
-    return plugins.lodash.cloneDeep(this._stringArray)
+  getStringArray() {
+    return plugins.lodash.cloneDeep(this._stringArray);
   }
 
   // trigger registering
@@ -88,27 +88,26 @@ export class Stringmap {
   /**
    * register a new trigger
    */
-  registerUntilTrue (functionArg: ITriggerFunction, doFunctionArg) {
-    this._triggerUntilTrueFunctionArray.push(
-      () => {
-        let result = functionArg()
-        if (result === true) {
-          doFunctionArg()
-        }
-        return result
+  registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg) {
+    this._triggerUntilTrueFunctionArray.push(() => {
+      let result = functionArg();
+      if (result === true) {
+        doFunctionArg();
       }
-    )
-    this.notifyTrigger()
+      return result;
+    });
+    this.notifyTrigger();
   }
-  
+
   /**
    * notifies triggers
    */
-  private notifyTrigger () {
-    let filteredArray = this._triggerUntilTrueFunctionArray.filter((functionArg) => {
-      return !functionArg()
-    })
-    this._triggerUntilTrueFunctionArray = filteredArray
+  private notifyTrigger() {
+    let filteredArray = this._triggerUntilTrueFunctionArray.filter(
+      functionArg => {
+        return !functionArg();
+      }
+    );
+    this._triggerUntilTrueFunctionArray = filteredArray;
   }
-
 }
