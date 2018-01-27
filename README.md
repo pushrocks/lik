@@ -17,6 +17,7 @@ light little helpers for node
 [![Dependency Status](https://david-dm.org/pushrocks/lik.svg)](https://david-dm.org/pushrocks/lik)
 [![bitHound Dependencies](https://www.bithound.io/github/pushrocks/lik/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/lik/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/pushrocks/lik/badges/code.svg)](https://www.bithound.io/github/pushrocks/lik)
+[![Known Vulnerabilities](https://snyk.io/test/npm/lik/badge.svg)](https://snyk.io/test/npm/lik)
 [![TypeScript](https://img.shields.io/badge/TypeScript-2.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/docs/api/)
 [![node](https://img.shields.io/badge/node->=%206.x.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/docs/api/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
