@@ -1,4 +1,4 @@
-import * as plugins from "./lik.plugins";
+import * as plugins from './lik.plugins';
 
 export class LimitedArray<T> {
   array: T[] = [];
@@ -28,7 +28,7 @@ export class LimitedArray<T> {
   }
 
   getAverage(): number {
-    if (typeof this.array[0] === "number") {
+    if (typeof this.array[0] === 'number') {
       let sum = 0;
       for (let localNumber of this.array) {
         let localNumberAny: any = localNumber;

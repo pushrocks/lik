@@ -28,7 +28,7 @@ Use TypeScript for best in class instellisense.
 
 ```javascript
 // import any tool that you need from lik
-import { Stringmap, Objectmap, Observablemap } from "lik";
+import { Stringmap, Objectmap, Observablemap } from 'lik';
 ```
 
 ### class Stringmap

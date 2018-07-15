@@ -1,4 +1,4 @@
-import * as plugins from "./lik.plugins";
+import * as plugins from './lik.plugins';
 
 /**
  * allows you to easily keep track of a bunch of strings
@@ -103,11 +103,9 @@ export class Stringmap {
    * notifies triggers
    */
   private notifyTrigger() {
-    let filteredArray = this._triggerUntilTrueFunctionArray.filter(
-      functionArg => {
-        return !functionArg();
-      }
-    );
+    let filteredArray = this._triggerUntilTrueFunctionArray.filter(functionArg => {
+      return !functionArg();
+    });
     this._triggerUntilTrueFunctionArray = filteredArray;
   }
 }

@@ -1,6 +1,6 @@
-import * as plugins from "./lik.plugins";
+import * as plugins from './lik.plugins';
 
-import { Objectmap } from "./lik.objectmap";
+import { Objectmap } from './lik.objectmap';
 
 export class LoopTracker<T> {
   referenceObjectMap = new Objectmap<any>();

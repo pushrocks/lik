@@ -1,4 +1,4 @@
-import * as plugins from "./lik.plugins";
+import * as plugins from './lik.plugins';
 
 export interface IObjectmapForEachFunction<T> {
   (itemArg: T): void;

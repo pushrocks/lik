@@ -1,4 +1,4 @@
-import * as plugins from "./lik.plugins";
+import * as plugins from './lik.plugins';
 
 export class Tree<T> {
   symbolTree: any;
@@ -51,7 +51,7 @@ export class Tree<T> {
   }
 
   childrenToArray(parentArg: T, optionsArg: any): T[] {
-    return this.symbolTree.childrenToArray(parent, optionsArg);
+    return this.symbolTree.childrenToArray(parentArg, optionsArg);
   }
 
   ancestorsToArray(objectArg: T, optionsArg: any): T[] {
