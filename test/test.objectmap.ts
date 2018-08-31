@@ -1,7 +1,7 @@
 // import test framework
 import { expect, tap } from '@pushrocks/tapbundle';
 import * as events from 'events';
-import * as smartq from 'smartq';
+import * as smartpromise from '@pushrocks/smartpromise';
 
 // import the module
 import * as lik from '../ts/index';
