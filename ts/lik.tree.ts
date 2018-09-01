@@ -6,6 +6,10 @@ export class Tree<T> {
     this.symbolTree = new plugins.symbolTree();
   }
 
+  // =======================================
+  // Functions that map to the functionality of symbol-tree
+  // =======================================
+
   /**
    *
    * @param objectArg
@@ -78,7 +82,7 @@ export class Tree<T> {
     this.symbolTree.ancestorsIterator();
   }
 
-  treeIterator(rootArg: T, optionsArg): T {
+  treeIterator(rootArg: T, optionsArg): Iterable<T> {
     return this.symbolTree.treeIterator(rootArg);
   }
 
@@ -113,4 +117,25 @@ export class Tree<T> {
   appendChild(referenceObjectArg, newObjectArg) {
     return this.symbolTree.appendChild(referenceObjectArg, newObjectArg);
   }
+
+  // ===========================================
+  // Functionionality that extends symbol-tree
+  // ===========================================
+
+  /**
+   * returns a branch of the tree as JSON
+   * can be user
+   */
+  toJsonWithHierachy(rootElement) {
+    const treeIterable = this.treeIterator(rootElement, {});
+    for (const treeItem of treeIterable) {
+      console.log(treeItem);
+    }
+  }
+
+  /**
+   * builds a tree from a JSON with hierachy
+   * @param rootElement
+   */
+  fromJsonWithHierachy(rootElement) {}
 }
