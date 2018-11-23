@@ -1,7 +1,30 @@
+// ==============
+// native
+// ==============
+
 import * as events from 'events';
-import * as lodash from 'lodash';
-import * as minimatch from 'minimatch';
+
+export { events };
+
+// ==============
+// @pushrocks
+// ==============
+import * as smartdelay from '@pushrocks/smartdelay';
 import * as smartpromise from '@pushrocks/smartpromise';
+import * as smartrx from '@pushrocks/smartrx';
+import * as smarttime from '@pushrocks/smarttime';
+
+export {
+  smartdelay,
+  smartpromise,
+  smartrx,
+  smarttime
+};
+
+// ==============
+// third party
+// ==============
+import * as minimatch from 'minimatch';
 const symbolTree = require('symbol-tree');
 
-export { events, lodash, minimatch, smartpromise, symbolTree };
+export { minimatch, symbolTree };

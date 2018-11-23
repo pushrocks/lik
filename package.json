@@ -21,16 +21,19 @@
   "homepage": "https://gitlab.com/pushrocks/lik#README",
   "devDependencies": {
     "@gitzone/tsbuild": "^2.0.22",
-    "@gitzone/tsrun": "^1.1.12",
+    "@gitzone/tsrun": "^1.1.13",
     "@gitzone/tstest": "^1.0.15",
-    "@pushrocks/tapbundle": "^3.0.5",
-    "@types/node": "^10.9.4"
+    "@pushrocks/tapbundle": "^3.0.7",
+    "@types/node": "^10.12.10",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0"
   },
   "dependencies": {
+    "@pushrocks/smartdelay": "^2.0.2",
     "@pushrocks/smartpromise": "^2.0.5",
-    "@types/lodash": "^4.14.116",
+    "@pushrocks/smartrx": "^2.0.2",
+    "@pushrocks/smarttime": "^3.0.5",
     "@types/minimatch": "^3.0.3",
-    "lodash": "^4.17.10",
     "minimatch": "^3.0.4",
     "symbol-tree": "^3.2.2"
   }

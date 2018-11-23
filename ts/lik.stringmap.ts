@@ -52,14 +52,14 @@ export class Stringmap {
   /**
    * check if string is in Stringmap
    */
-  checkString(stringArg: string): boolean {
+  public checkString(stringArg: string): boolean {
     return this._stringArray.indexOf(stringArg) !== -1;
   }
 
   /**
    * checks stringPresence with minimatch
    */
-  checkMinimatch(miniMatchStringArg: string): boolean {
+  public checkMinimatch(miniMatchStringArg: string): boolean {
     let foundMatch: boolean = false;
     for (let stringItem of this._stringArray) {
       if (plugins.minimatch(stringItem, miniMatchStringArg)) {
@@ -72,15 +72,19 @@ export class Stringmap {
   /**
    * checks if the Stringmap is empty
    */
-  checkIsEmpty() {
+  public checkIsEmpty() {
     return this._stringArray.length === 0;
   }
 
   /**
    * gets a cloned copy of the current string Array
    */
-  getStringArray() {
-    return plugins.lodash.cloneDeep(this._stringArray);
+  public getStringArray() {
+    const returnArray: string[] = [];
+    for (const stringItem of this._stringArray) {
+      returnArray.push(stringItem);
+    }
+    return returnArray;
   }
 
   // trigger registering
@@ -88,7 +92,7 @@ export class Stringmap {
   /**
    * register a new trigger
    */
-  registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg) {
+  public registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg) {
     this._triggerUntilTrueFunctionArray.push(() => {
       let result = functionArg();
       if (result === true) {

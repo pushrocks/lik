@@ -31,9 +31,9 @@ tap.test('should add other objects in a hierachy', async () => {
   testTree.appendChild(testInstance, testInstance2);
   testTree.appendChild(testInstance, testInstance3);
   testTree.appendChild(testInstance, testInstance4);
-})
+});
 
-tap.test('should create a JSON object that reflects a tree\'s hierachy', async () => {
+tap.test("should create a JSON object that reflects a tree's hierachy", async () => {
   const jsonTreet = testTree.toJsonWithHierachy(testInstance);
 });
 

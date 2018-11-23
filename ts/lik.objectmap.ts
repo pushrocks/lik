@@ -26,7 +26,7 @@ export class Objectmap<T> {
    * returns false if the object is already in the map
    * returns true if the object was added successfully
    */
-  add(objectArg: T): boolean {
+  public add(objectArg: T): boolean {
     if (this.checkForObject(objectArg)) {
       // the object is already in the objectmap
       return false;
@@ -40,7 +40,7 @@ export class Objectmap<T> {
   /**
    * like .add but adds an whole array of objects
    */
-  addArray(objectArrayArg: T[]) {
+  public addArray(objectArrayArg: T[]) {
     for (let item of objectArrayArg) {
       this.add(item);
     }
@@ -49,15 +49,15 @@ export class Objectmap<T> {
   /**
    * check if object is in Objectmap
    */
-  checkForObject(objectArg: T) {
+  public checkForObject(objectArg: T) {
     return this.objectArray.indexOf(objectArg) !== -1;
   }
 
   /**
    * find object
    */
-  find(findFunction: IObjectmapFindFunction<T>) {
-    let resultArray = this.objectArray.filter(findFunction);
+  public find(findFunction: IObjectmapFindFunction<T>) {
+    const resultArray = this.objectArray.filter(findFunction);
     if (resultArray.length > 0) {
       return resultArray[0];
     } else {
@@ -68,8 +68,8 @@ export class Objectmap<T> {
   /**
    * finds a specific element and then removes it
    */
-  findOneAndRemove(findFunction: IObjectmapFindFunction<T>): T {
-    let foundElement = this.find(findFunction);
+  public findOneAndRemove(findFunction: IObjectmapFindFunction<T>): T {
+    const foundElement = this.find(findFunction);
     if (foundElement) {
       this.remove(foundElement);
     }
@@ -79,7 +79,7 @@ export class Objectmap<T> {
   /**
    * run function for each item in Objectmap
    */
-  async forEach(functionArg: IObjectmapForEachFunction<T>) {
+  public async forEach(functionArg: IObjectmapForEachFunction<T>) {
     for (let object of this.objectArray) {
       await functionArg(object);
     }
@@ -88,21 +88,25 @@ export class Objectmap<T> {
   /**
    * gets an object in the Observablemap and removes it, so it can't be retrieved again
    */
-  getOneAndRemove(): T {
+  public getOneAndRemove(): T {
     return this.objectArray.shift();
   }
 
   /**
    * returns a cloned array of all the objects currently in the Objectmap
    */
-  getArray() {
-    return plugins.lodash.cloneDeep(this.objectArray);
+  public getArray() {
+    const returnArray: any[] = [];
+    for (const objectItem of this.objectArray) {
+      returnArray.push(objectItem);
+    }
+    return returnArray;
   }
 
   /**
    * check if Objectmap ist empty
    */
-  isEmpty(): boolean {
+  public isEmpty(): boolean {
     if (this.objectArray.length === 0) {
       return true;
     } else {
@@ -113,7 +117,7 @@ export class Objectmap<T> {
   /**
    * remove object from Objectmap
    */
-  remove(objectArg: T) {
+  public remove(objectArg: T) {
     let replacementArray = [];
     for (let item of this.objectArray) {
       if (item !== objectArg) {
@@ -126,7 +130,7 @@ export class Objectmap<T> {
   /**
    * wipe Objectmap
    */
-  wipe() {
+  public wipe() {
     this.objectArray = [];
   }
 }
