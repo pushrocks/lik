@@ -1,6 +1,6 @@
 import * as plugins from './lik.plugins';
 
-import { InterestMap, IInterestComparisonFunc} from './lik.interestmap';
+import { InterestMap, IInterestComparisonFunc } from './lik.interestmap';
 
 export class Interest<DTInterestId, DTInterestFullfillment> {
   private interestMapRef: InterestMap<DTInterestId, DTInterestFullfillment>;
@@ -21,7 +21,9 @@ export class Interest<DTInterestId, DTInterestFullfillment> {
     return this.comparisonFunc(this.originalInterest);
   }
 
-  private interestDeferred: plugins.smartpromise.Deferred<DTInterestFullfillment> = new plugins.smartpromise.Deferred();
+  private interestDeferred: plugins.smartpromise.Deferred<
+    DTInterestFullfillment
+  > = new plugins.smartpromise.Deferred();
   public interestFullfilled = this.interestDeferred.promise;
 
   /**

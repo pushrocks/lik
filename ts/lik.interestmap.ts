@@ -7,8 +7,6 @@ import { Interest } from './lik.interestmap.interest';
 
 export type IInterestComparisonFunc<T> = (objectArg: T) => string;
 
-
-
 export class InterestMap<DTInterestId, DTInterestFullfillment> {
   /**
    * stores interests that are currently fullfilled by the cache
@@ -93,14 +91,13 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
 
   /**
    * inform lost interest
-   * @param interestId 
+   * @param interestId
    */
-  public informLostInterest (interestId: DTInterestId) {
+  public informLostInterest(interestId: DTInterestId) {
     const wantedInterest = this.findInterest(interestId);
     if (wantedInterest) {
       wantedInterest.markLost();
     }
-
   }
 
   /**

@@ -14,12 +14,7 @@ import * as smartpromise from '@pushrocks/smartpromise';
 import * as smartrx from '@pushrocks/smartrx';
 import * as smarttime from '@pushrocks/smarttime';
 
-export {
-  smartdelay,
-  smartpromise,
-  smartrx,
-  smarttime
-};
+export { smartdelay, smartpromise, smartrx, smarttime };
 
 // ==============
 // third party
