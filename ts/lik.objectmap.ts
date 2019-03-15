@@ -95,7 +95,7 @@ export class Objectmap<T> {
   /**
    * returns a cloned array of all the objects currently in the Objectmap
    */
-  public getArray() {
+  public getArray(): T[] {
     const returnArray: any[] = [];
     for (const objectItem of this.objectArray) {
       returnArray.push(objectItem);
