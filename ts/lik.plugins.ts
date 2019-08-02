@@ -19,7 +19,7 @@ export { smartdelay, smartpromise, smartrx, smarttime };
 // ==============
 // third party
 // ==============
-import * as minimatch from 'minimatch';
+import minimatch from 'minimatch';
 const symbolTree = require('symbol-tree');
 
 export { minimatch, symbolTree };
