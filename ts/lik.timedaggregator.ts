@@ -11,11 +11,10 @@ export class TimedAggregtor<T> {
 
   constructor(optionsArg: ITimedAggregatorOptions<T>) {
     this.options = optionsArg;
-
   }
 
   private aggregationTimer: plugins.smarttime.Timer;
-  private checkAggregationStatus () {
+  private checkAggregationStatus() {
     const addAggregationTimer = () => {
       this.aggregationTimer = new plugins.smarttime.Timer(this.options.aggregationIntervalInMillis);
       this.aggregationTimer.completed.then(() => {
@@ -39,4 +38,4 @@ export class TimedAggregtor<T> {
     this.storageArray.push(aggregationArg);
     this.checkAggregationStatus();
   }
-};
+}
