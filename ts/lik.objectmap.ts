@@ -14,6 +14,9 @@ export interface IObjectmapFindFunction<T> {
 export class Objectmap<T> {
   private objectArray: T[] = [];
 
+  // events
+  public eventSubject = new plugins.smartrx.rxjs.Subject<any>();
+
   /**
    * returns a new instance
    */
@@ -33,6 +36,7 @@ export class Objectmap<T> {
     } else {
       // the object is not yet in the objectmap
       this.objectArray.push(objectArg);
+      this.eventSubject.next('add');
       return true;
     }
   }
@@ -89,7 +93,9 @@ export class Objectmap<T> {
    * gets an object in the Observablemap and removes it, so it can't be retrieved again
    */
   public getOneAndRemove(): T {
-    return this.objectArray.shift();
+    const removedItem = this.objectArray.shift();
+    this.eventSubject.next('remove');
+    return removedItem;
   }
 
   /**
@@ -125,6 +131,7 @@ export class Objectmap<T> {
       }
     }
     this.objectArray = replacementArray;
+    this.eventSubject.next('remove');
   }
 
   /**
@@ -132,5 +139,6 @@ export class Objectmap<T> {
    */
   public wipe() {
     this.objectArray = [];
+    this.eventSubject.next('wiped');
   }
 }
