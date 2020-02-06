@@ -24,7 +24,7 @@ export class Stringmap {
    * like addString, but accepts an array of strings
    */
   addStringArray(stringArrayArg: string[]) {
-    for (let stringItem of stringArrayArg) {
+    for (const stringItem of stringArrayArg) {
       this.addString(stringItem);
     }
   }
@@ -33,7 +33,7 @@ export class Stringmap {
    * removes a string from Stringmap
    */
   removeString(stringArg: string) {
-    for (let keyArg in this._stringArray) {
+    for (const keyArg in this._stringArray) {
       if (this._stringArray[keyArg] === stringArg) {
         this._stringArray.splice(parseInt(keyArg), 1);
       }
@@ -61,7 +61,7 @@ export class Stringmap {
    */
   public checkMinimatch(miniMatchStringArg: string): boolean {
     let foundMatch: boolean = false;
-    for (let stringItem of this._stringArray) {
+    for (const stringItem of this._stringArray) {
       if (plugins.minimatch(stringItem, miniMatchStringArg)) {
         foundMatch = true;
       }
@@ -94,7 +94,7 @@ export class Stringmap {
    */
   public registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg) {
     this._triggerUntilTrueFunctionArray.push(() => {
-      let result = functionArg();
+      const result = functionArg();
       if (result === true) {
         doFunctionArg();
       }
@@ -107,7 +107,7 @@ export class Stringmap {
    * notifies triggers
    */
   private notifyTrigger() {
-    let filteredArray = this._triggerUntilTrueFunctionArray.filter(functionArg => {
+    const filteredArray = this._triggerUntilTrueFunctionArray.filter(functionArg => {
       return !functionArg();
     });
     this._triggerUntilTrueFunctionArray = filteredArray;

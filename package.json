@@ -24,8 +24,8 @@
     "@gitzone/tsrun": "^1.2.8",
     "@gitzone/tstest": "^1.0.28",
     "@pushrocks/tapbundle": "^3.2.0",
-    "@types/node": "^12.12.14",
-    "tslint": "^5.20.1",
+    "@types/node": "^13.7.0",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
@@ -38,12 +38,12 @@
     "symbol-tree": "^3.2.4"
   },
   "files": [
-    "ts/*",
-    "ts_web/*",
-    "dist/*",
-    "dist_web/*",
-    "dist_ts_web/*",
-    "assets/*",
+    "ts/**/*",
+    "ts_web/**/*",
+    "dist/**/*",
+    "dist_web/**/*",
+    "dist_ts_web/**/*",
+    "assets/**/*",
     "cli.js",
     "npmextra.json",
     "readme.md"

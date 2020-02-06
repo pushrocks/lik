@@ -1,4 +1,5 @@
 import * as plugins from './lik.plugins';
+import { FastMap } from './lik.fastmap';
 
 export interface IObjectmapForEachFunction<T> {
   (itemArg: T): void;
@@ -12,6 +13,7 @@ export interface IObjectmapFindFunction<T> {
  * allows keeping track of objects
  */
 export class Objectmap<T> {
+  private fastMap = new FastMap<T>();
   private objectArray: T[] = [];
 
   // events
@@ -23,6 +25,27 @@ export class Objectmap<T> {
   constructor() {
     // nothing here
   }
+
+  /**
+   * adds an object mapped to a string
+   * the string must be unique
+   */
+  addMappedUnique(uniqueKey: string, objectArg: T) {
+    this.add(objectArg);
+    this.fastMap.addToMap(uniqueKey, objectArg);
+  }
+
+  /**
+   * fastest way to get an object from the map
+   * @param uniqueKey
+   */
+  public getMappedUnique(uniqueKey: string) {}
+
+  /**
+   * remove key
+   * @param functionArg
+   */
+  public removeMappedUnique() {}
 
   /**
    * add object to Objectmap
