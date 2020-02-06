@@ -12,7 +12,12 @@ export class LoopTracker<T> {
    * checks and tracks an object
    * @param objectArg
    */
-  checkAndTrack(objectArg: T) {
-    return this.referenceObjectMap.add(objectArg);
+  checkAndTrack(objectArg: T): boolean {
+    if (!this.referenceObjectMap.checkForObject(objectArg)) {
+      this.referenceObjectMap.add(objectArg);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
