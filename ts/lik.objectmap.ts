@@ -87,7 +87,7 @@ export class Objectmap<T> {
 
   /**
    * get key for object
-   * @param findFunction 
+   * @param findFunction
    */
   public getKeyForObject(objectArg: T) {
     let foundKey: string = null;
@@ -137,10 +137,14 @@ export class Objectmap<T> {
    */
   public getOneAndRemove(): T {
     const keys = this.fastMap.getKeys();
-    const keyToUse = keys[keys.length - 1];
-    const removedItem = this.fastMap.removeFromMap(keyToUse);
-    this.eventSubject.next('remove');
-    return removedItem;
+    if (keys.length === 0) {
+      return null;
+    } else {
+      const keyToUse = keys[0];
+      const removedItem = this.fastMap.removeFromMap(keyToUse);
+      this.eventSubject.next('remove');
+      return removedItem;
+    }
   }
 
   /**
@@ -181,6 +185,5 @@ export class Objectmap<T> {
     for (const keyArg of this.fastMap.getKeys()) {
       this.fastMap.removeFromMap(keyArg);
     }
-
   }
 }
