@@ -106,8 +106,8 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    */
   public findInterest(objectArg: DTInterestId): Interest<DTInterestId, DTInterestFullfillment> {
     const comparableString = this.comparisonFunc(objectArg);
-    const interest = this.interestObjectMap.find(interest => {
-      return interest.comparisonString === comparableString;
+    const interest = this.interestObjectMap.find(interestArg => {
+      return interestArg.comparisonString === comparableString;
     });
     return interest; // if an interest is found, the interest is returned, otherwise interest is null
   }

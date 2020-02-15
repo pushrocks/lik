@@ -1,7 +1,4 @@
-import * as plugins from './lik.plugins';
-
-// import modules
-
+export * from './lik.fastmap';
 export * from './lik.interestmap';
 export * from './lik.limitedarray';
 export * from './lik.looptracker';
