@@ -38,4 +38,8 @@ export class FastMap<T> {
     }
     return keys;
   }
+
+  public clean() {
+    this.mapObject = {};
+  }
 }
