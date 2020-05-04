@@ -11,7 +11,7 @@ interface ITestObject {
   propOne: string;
   propTwo: string;
 }
-let testObjectmap: lik.Objectmap<ITestObject>;
+let testObjectmap: lik.ObjectMap<ITestObject>;
 let testObject1: ITestObject = {
   propOne: 'hello',
   propTwo: 'hello2'
@@ -22,8 +22,8 @@ let testObject2: ITestObject = {
 };
 
 tap.test('new lik.Objectmap() -> should correctly instantiate an Objectmap', async () => {
-  testObjectmap = new lik.Objectmap<ITestObject>();
-  expect(testObjectmap).be.instanceof(lik.Objectmap);
+  testObjectmap = new lik.ObjectMap<ITestObject>();
+  expect(testObjectmap).be.instanceof(lik.ObjectMap);
 });
 
 tap.test('lik.Objectmap.add() -> should correctly add an object to Objectmap', async () => {

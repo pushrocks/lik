@@ -10,8 +10,14 @@ export class FastMap<T> {
     return this.mapObject[keyArg] ? false : true;
   }
 
-  public addToMap(keyArg: string, objectArg: T): boolean {
-    if (this.isUniqueKey(keyArg)) {
+  public addToMap(
+    keyArg: string,
+    objectArg: T,
+    optionsArg?: {
+      force: boolean;
+    }
+  ): boolean {
+    if (this.isUniqueKey(keyArg) || (optionsArg && optionsArg.force)) {
       this.mapObject[keyArg] = objectArg;
       return true;
     } else {
@@ -32,14 +38,45 @@ export class FastMap<T> {
   public getKeys() {
     const keys: string[] = [];
     for (const keyArg in this.mapObject) {
-       if (this.mapObject[keyArg]) {
-         keys.push(keyArg);
-       }
+      if (this.mapObject[keyArg]) {
+        keys.push(keyArg);
+      }
     }
     return keys;
   }
 
   public clean() {
     this.mapObject = {};
+  }
+
+  /**
+   * returns a new Objectmap that includes
+   */
+  public concat(fastMapArg: FastMap<T>) {
+    const concatedFastmap = new FastMap<T>();
+    for (const key of this.getKeys()) {
+      concatedFastmap.addToMap(key, this.getByKey(key));
+    }
+
+    for (const key of fastMapArg.getKeys()) {
+      concatedFastmap.addToMap(key, fastMapArg.getByKey(key), {
+        force: true
+      });
+    }
+
+    return concatedFastmap;
+  }
+
+  /**
+   * tries to merge another Objectmap
+   * Note: uniqueKeyCollisions will cause overwrite
+   * @param objectMapArg
+   */
+  public addAllFromOther(fastMapArg: FastMap<T>) {
+    for (const key of fastMapArg.getKeys()) {
+      this.addToMap(key, fastMapArg.getByKey(key), {
+        force: true
+      });
+    }
   }
 }

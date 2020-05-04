@@ -12,7 +12,7 @@ export interface IObjectmapFindFunction<T> {
 /**
  * allows keeping track of objects
  */
-export class Objectmap<T> {
+export class ObjectMap<T> {
   private fastMap = new FastMap<T>();
 
   // events
@@ -185,5 +185,24 @@ export class Objectmap<T> {
     for (const keyArg of this.fastMap.getKeys()) {
       this.fastMap.removeFromMap(keyArg);
     }
+  }
+
+  /**
+   * returns a new Objectmap that includes 
+   */
+  public concat(objectMapArg: ObjectMap<T>) {
+    const concattedObjectMap = new ObjectMap<T>();
+    concattedObjectMap.fastMap.addAllFromOther(this.fastMap);
+    concattedObjectMap.fastMap.addAllFromOther(objectMapArg.fastMap);
+    return concattedObjectMap;
+  }
+
+  /**
+   * tries to merge another Objectmap
+   * Note: uniqueKeyCollisions will cause overwrite
+   * @param objectMapArg
+   */
+  public addAllFromOther(objectMapArg: ObjectMap<T>) {
+    this.fastMap.addAllFromOther(objectMapArg.fastMap);
   }
 }

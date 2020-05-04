@@ -1,5 +1,5 @@
 import * as plugins from './lik.plugins';
-import { Objectmap } from './lik.objectmap';
+import { ObjectMap } from './lik.objectmap';
 
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
   /**
    * stores interests that are currently fullfilled by the cache
    */
-  private interestObjectMap = new Objectmap<Interest<DTInterestId, DTInterestFullfillment>>();
+  private interestObjectMap = new ObjectMap<Interest<DTInterestId, DTInterestFullfillment>>();
 
   /**
    * a function to compare interests
