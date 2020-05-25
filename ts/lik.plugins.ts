@@ -1,12 +1,4 @@
 // ==============
-// native
-// ==============
-
-import * as events from 'events';
-
-export { events };
-
-// ==============
 // @pushrocks
 // ==============
 import * as smartdelay from '@pushrocks/smartdelay';
