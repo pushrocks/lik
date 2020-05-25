@@ -4,13 +4,11 @@ import * as plugins from './lik.plugins';
  * allows you to easily keep track of a bunch of strings
  */
 
-export interface ITriggerFunction {
-  (): boolean;
-}
+export type TTriggerFunction =  (stringArray?: string[]) => boolean;
 
 export class Stringmap {
   private _stringArray: string[] = [];
-  private _triggerUntilTrueFunctionArray: ITriggerFunction[] = [];
+  private _triggerUntilTrueFunctionArray: TTriggerFunction[] = [];
   constructor() {}
   /**
    * add a string to the Stringmap
@@ -92,10 +90,10 @@ export class Stringmap {
   /**
    * register a new trigger
    */
-  public registerUntilTrue(functionArg: ITriggerFunction, callbackArg?: () => any) {
+  public registerUntilTrue(functionArg: TTriggerFunction, callbackArg?: () => any) {
     const trueDeferred = plugins.smartpromise.defer();
     this._triggerUntilTrueFunctionArray.push(() => {
-      const result = functionArg();
+      const result = functionArg(this.getStringArray());
       if (result === true) {
         if (callbackArg) {
           callbackArg();
