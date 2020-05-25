@@ -1,4 +1,5 @@
-import * as plugins from './lik.plugins';
+import { SmartMatch } from '@pushrocks/smartmatch';
+import * as smartpromise from '@pushrocks/smartpromise';
 
 /**
  * allows you to easily keep track of a bunch of strings
@@ -58,9 +59,10 @@ export class Stringmap {
    * checks stringPresence with minimatch
    */
   public checkMinimatch(miniMatchStringArg: string): boolean {
+    const smartMatchInstance = new SmartMatch(miniMatchStringArg);
     let foundMatch: boolean = false;
     for (const stringItem of this._stringArray) {
-      if (plugins.minimatch(stringItem, miniMatchStringArg)) {
+      if (smartMatchInstance.match(stringItem)) {
         foundMatch = true;
       }
     }
@@ -91,7 +93,7 @@ export class Stringmap {
    * register a new trigger
    */
   public registerUntilTrue(functionArg: TTriggerFunction, callbackArg?: () => any) {
-    const trueDeferred = plugins.smartpromise.defer();
+    const trueDeferred = smartpromise.defer();
     this._triggerUntilTrueFunctionArray.push(() => {
       const result = functionArg(this.getStringArray());
       if (result === true) {

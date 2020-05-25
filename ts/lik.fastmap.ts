@@ -1,5 +1,3 @@
-import * as plugins from './lik.plugins';
-
 /**
  * fast map allows for very quick lookups of objects with a unique key
  */
