@@ -188,7 +188,7 @@ export class ObjectMap<T> {
   }
 
   /**
-   * returns a new Objectmap that includes 
+   * returns a new Objectmap that includes
    */
   public concat(objectMapArg: ObjectMap<T>) {
     const concattedObjectMap = new ObjectMap<T>();

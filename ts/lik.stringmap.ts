@@ -92,15 +92,20 @@ export class Stringmap {
   /**
    * register a new trigger
    */
-  public registerUntilTrue(functionArg: ITriggerFunction, doFunctionArg) {
+  public registerUntilTrue(functionArg: ITriggerFunction, callbackArg?: () => any) {
+    const trueDeferred = plugins.smartpromise.defer();
     this._triggerUntilTrueFunctionArray.push(() => {
       const result = functionArg();
       if (result === true) {
-        doFunctionArg();
+        if (callbackArg) {
+          callbackArg();
+        }
+        trueDeferred.resolve();
       }
       return result;
     });
     this.notifyTrigger();
+    return trueDeferred.promise;
   }
 
   /**

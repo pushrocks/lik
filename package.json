@@ -3,8 +3,8 @@
   "version": "4.0.0",
   "private": false,
   "description": "light little helpers for node",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist_ts/index.js",
+  "typings": "dist_ts/index.d.ts",
   "scripts": {
     "test": "(tstest test/)",
     "build": "(tsbuild)"
@@ -20,12 +20,12 @@
   },
   "homepage": "https://gitlab.com/pushrocks/lik#README",
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.17",
+    "@gitzone/tsbuild": "^2.1.24",
     "@gitzone/tsrun": "^1.2.8",
     "@gitzone/tstest": "^1.0.28",
-    "@pushrocks/tapbundle": "^3.2.0",
-    "@types/node": "^13.7.0",
-    "tslint": "^6.0.0",
+    "@pushrocks/tapbundle": "^3.2.1",
+    "@types/node": "^14.0.5",
+    "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
@@ -33,7 +33,7 @@
     "@pushrocks/smartpromise": "^3.0.6",
     "@pushrocks/smartrx": "^2.0.5",
     "@pushrocks/smarttime": "^3.0.12",
-    "@pushrocks/smartunique": "^3.0.1",
+    "@pushrocks/smartunique": "^3.0.3",
     "@types/minimatch": "^3.0.3",
     "minimatch": "^3.0.4",
     "symbol-tree": "^3.2.4"
@@ -42,7 +42,8 @@
     "ts/**/*",
     "ts_web/**/*",
     "dist/**/*",
-    "dist_web/**/*",
+    "dist_*/**/*",
+    "dist_ts/**/*",
     "dist_ts_web/**/*",
     "assets/**/*",
     "cli.js",
