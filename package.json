@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/lik",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "private": false,
   "description": "light little helpers for node",
   "main": "dist_ts/index.js",
