@@ -1,6 +1,14 @@
 import * as plugins from './lik.plugins';
 import { FastMap } from './lik.fastmap';
 
+export const uni = (prefix: string = 'uni') => {
+  return `${prefix}xxxxxxxxxxx`.replace(/[xy]/g, c => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+
 export interface IObjectmapForEachFunction<T> {
   (itemArg: T): void;
 }
@@ -64,7 +72,7 @@ export class ObjectMap<T> {
     }
 
     // otherwise lets create it
-    const uniqueKey = plugins.smartunique.shortId();
+    const uniqueKey = uni('key');
     this.addMappedUnique(uniqueKey, objectArg);
     return uniqueKey;
   }
