@@ -37,7 +37,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
       this.comparisonFunc
     );
     let interestExists = false;
-    await this.interestObjectMap.forEach(interestArg => {
+    await this.interestObjectMap.forEach((interestArg) => {
       if (!interestExists && interestArg.comparisonString === newInterest.comparisonString) {
         console.log('info', `interest already exists for ${newInterest.comparisonString}`);
         interestExists = true;
@@ -61,7 +61,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    * @param objectArg removes an interest from the InterestMap
    */
   public removeInterest(interestArg: Interest<DTInterestId, DTInterestFullfillment>) {
-    const interestToRemove = this.interestObjectMap.findOneAndRemove(interestArg2 => {
+    const interestToRemove = this.interestObjectMap.findOneAndRemove((interestArg2) => {
       return interestArg.comparisonString === interestArg2.comparisonString;
     });
   }
@@ -79,7 +79,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    * @param comparisonStringArg
    */
   public checkInterestByString(comparisonStringArg: string): boolean {
-    const foundInterest = this.interestObjectMap.find(interest => {
+    const foundInterest = this.interestObjectMap.find((interest) => {
       return interest.comparisonString === comparisonStringArg;
     });
     if (foundInterest) {
@@ -106,7 +106,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    */
   public findInterest(objectArg: DTInterestId): Interest<DTInterestId, DTInterestFullfillment> {
     const comparableString = this.comparisonFunc(objectArg);
-    const interest = this.interestObjectMap.find(interestArg => {
+    const interest = this.interestObjectMap.find((interestArg) => {
       return interestArg.comparisonString === comparableString;
     });
     return interest; // if an interest is found, the interest is returned, otherwise interest is null

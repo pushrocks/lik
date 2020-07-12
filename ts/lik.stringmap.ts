@@ -4,7 +4,7 @@ import * as plugins from './lik.plugins';
  * allows you to easily keep track of a bunch of strings
  */
 
-export type TTriggerFunction =  (stringArray?: string[]) => boolean;
+export type TTriggerFunction = (stringArray?: string[]) => boolean;
 
 export class Stringmap {
   private _stringArray: string[] = [];
@@ -111,7 +111,7 @@ export class Stringmap {
    * notifies triggers
    */
   private notifyTrigger() {
-    const filteredArray = this._triggerUntilTrueFunctionArray.filter(functionArg => {
+    const filteredArray = this._triggerUntilTrueFunctionArray.filter((functionArg) => {
       return !functionArg();
     });
     this._triggerUntilTrueFunctionArray = filteredArray;

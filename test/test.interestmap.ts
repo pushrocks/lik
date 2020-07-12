@@ -4,7 +4,7 @@ import * as lik from '../ts/index';
 let testInterestmap: lik.InterestMap<number, number>;
 
 tap.test('should create an interestmap', async () => {
-  testInterestmap = new lik.InterestMap(numberArg => {
+  testInterestmap = new lik.InterestMap((numberArg) => {
     return numberArg.toString();
   });
 });

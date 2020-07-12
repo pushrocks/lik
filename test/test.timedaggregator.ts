@@ -8,12 +8,12 @@ import * as lik from '../ts/index';
 
 let testTimedAggregator: lik.TimedAggregtor<string>;
 
-tap.test('should create a timed aggregaotor', async tools => {
+tap.test('should create a timed aggregaotor', async (tools) => {
   testTimedAggregator = new lik.TimedAggregtor<string>({
     aggregationIntervalInMillis: 1000,
-    functionForAggregation: aggregation => {
+    functionForAggregation: (aggregation) => {
       console.log(aggregation);
-    }
+    },
   });
   testTimedAggregator.add('This');
   testTimedAggregator.add('is a whole sentence.');

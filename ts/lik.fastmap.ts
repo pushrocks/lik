@@ -60,7 +60,7 @@ export class FastMap<T> {
 
     for (const key of fastMapArg.getKeys()) {
       concatedFastmap.addToMap(key, fastMapArg.getByKey(key), {
-        force: true
+        force: true,
       });
     }
 
@@ -75,7 +75,7 @@ export class FastMap<T> {
   public addAllFromOther(fastMapArg: FastMap<T>) {
     for (const key of fastMapArg.getKeys()) {
       this.addToMap(key, fastMapArg.getByKey(key), {
-        force: true
+        force: true,
       });
     }
   }
