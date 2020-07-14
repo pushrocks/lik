@@ -2,12 +2,13 @@ import * as plugins from './lik.plugins';
 
 import { InterestMap, IInterestComparisonFunc } from './lik.interestmap';
 
-export interface IInterestOptions {
+export interface IInterestOptions<DTInterestFullfillment> {
   markLostAfterDefault: number;
+  defaultFullfillment?: DTInterestFullfillment;
 }
 
 export class Interest<DTInterestId, DTInterestFullfillment> {
-  public options: IInterestOptions;
+  public options: IInterestOptions<DTInterestFullfillment>;
 
   private interestMapRef: InterestMap<DTInterestId, DTInterestFullfillment>;
   public originalInterest: DTInterestId;
@@ -48,7 +49,7 @@ export class Interest<DTInterestId, DTInterestFullfillment> {
     interestMapArg: InterestMap<DTInterestId, DTInterestFullfillment>,
     interestArg: DTInterestId,
     comparisonFuncArg: IInterestComparisonFunc<DTInterestId>,
-    optionsArg?: IInterestOptions
+    optionsArg?: IInterestOptions<DTInterestFullfillment>
   ) {
     this.interestMapRef = interestMapArg;
     this.originalInterest = interestArg;
@@ -72,6 +73,9 @@ export class Interest<DTInterestId, DTInterestFullfillment> {
    */
   public destroy() {
     this.interestMapRef.removeInterest(this);
+    if (!this.isFullfilled && this.options.defaultFullfillment) {
+      this.fullfillInterest(this.options.defaultFullfillment);
+    }
   }
 
   /**

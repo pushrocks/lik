@@ -34,7 +34,8 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    * @param objectArg
    */
   public async addInterest(
-    objectArg: DTInterestId
+    objectArg: DTInterestId,
+    defaultFullfillmentArg?: DTInterestFullfillment
   ): Promise<Interest<DTInterestId, DTInterestFullfillment>> {
     const comparisonString = this.comparisonFunc(objectArg);
     let returnInterest: Interest<DTInterestId, DTInterestFullfillment>;
@@ -43,7 +44,8 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
       objectArg,
       this.comparisonFunc,
       {
-        markLostAfterDefault: this.options.markLostAfterDefault
+        markLostAfterDefault: this.options.markLostAfterDefault,
+        defaultFullfillment: defaultFullfillmentArg
       }
     );
     let interestExists = false;
