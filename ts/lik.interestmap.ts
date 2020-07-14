@@ -7,7 +7,13 @@ import { Interest } from './lik.interestmap.interest';
 
 export type IInterestComparisonFunc<T> = (objectArg: T) => string;
 
+export interface IInterestMapOptions {
+  markLostAfterDefault?: number;
+}
+
 export class InterestMap<DTInterestId, DTInterestFullfillment> {
+  public options: IInterestMapOptions;
+
   /**
    * stores interests that are currently fullfilled by the cache
    */
@@ -18,8 +24,9 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    */
   private comparisonFunc: IInterestComparisonFunc<DTInterestId>;
 
-  constructor(comparisonFuncArg: IInterestComparisonFunc<DTInterestId>) {
+  constructor(comparisonFuncArg: IInterestComparisonFunc<DTInterestId>, optionsArg: IInterestMapOptions = {}) {
     this.comparisonFunc = comparisonFuncArg;
+    this.options = optionsArg;
   }
 
   /**
@@ -34,7 +41,10 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
     const newInterest = new Interest<DTInterestId, DTInterestFullfillment>(
       this,
       objectArg,
-      this.comparisonFunc
+      this.comparisonFunc,
+      {
+        markLostAfterDefault: this.options.markLostAfterDefault
+      }
     );
     let interestExists = false;
     await this.interestObjectMap.forEach((interestArg) => {

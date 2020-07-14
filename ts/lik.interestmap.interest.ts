@@ -2,7 +2,13 @@ import * as plugins from './lik.plugins';
 
 import { InterestMap, IInterestComparisonFunc } from './lik.interestmap';
 
+export interface IInterestOptions {
+  markLostAfterDefault: number;
+}
+
 export class Interest<DTInterestId, DTInterestFullfillment> {
+  public options: IInterestOptions;
+
   private interestMapRef: InterestMap<DTInterestId, DTInterestFullfillment>;
   public originalInterest: DTInterestId;
   public comparisonFunc: IInterestComparisonFunc<DTInterestId>;
@@ -41,14 +47,20 @@ export class Interest<DTInterestId, DTInterestFullfillment> {
   constructor(
     interestMapArg: InterestMap<DTInterestId, DTInterestFullfillment>,
     interestArg: DTInterestId,
-    comparisonFuncArg: IInterestComparisonFunc<DTInterestId>
+    comparisonFuncArg: IInterestComparisonFunc<DTInterestId>,
+    optionsArg?: IInterestOptions
   ) {
+    this.interestMapRef = interestMapArg;
     this.originalInterest = interestArg;
     this.comparisonFunc = comparisonFuncArg;
-    this.interestMapRef = interestMapArg;
+    this.options = optionsArg;
+
     this.destructionTimer.completed.then(() => {
       this.destroy();
     });
+    if (this.options?.markLostAfterDefault) {
+      plugins.smartdelay.delayFor(this.options.markLostAfterDefault).then(this.markLost);
+    }
   }
 
   // ===============================
