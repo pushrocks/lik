@@ -1,5 +1,6 @@
 export * from './lik.fastmap';
 export * from './lik.interestmap';
+export * from './lik.interestmap.interest';
 export * from './lik.limitedarray';
 export * from './lik.looptracker';
 export * from './lik.objectmap';
