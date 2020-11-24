@@ -24,7 +24,10 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
    */
   private comparisonFunc: IInterestComparisonFunc<DTInterestId>;
 
-  constructor(comparisonFuncArg: IInterestComparisonFunc<DTInterestId>, optionsArg: IInterestMapOptions = {}) {
+  constructor(
+    comparisonFuncArg: IInterestComparisonFunc<DTInterestId>,
+    optionsArg: IInterestMapOptions = {}
+  ) {
     this.comparisonFunc = comparisonFuncArg;
     this.options = optionsArg;
   }
@@ -45,7 +48,7 @@ export class InterestMap<DTInterestId, DTInterestFullfillment> {
       this.comparisonFunc,
       {
         markLostAfterDefault: this.options.markLostAfterDefault,
-        defaultFullfillment: defaultFullfillmentArg
+        defaultFullfillment: defaultFullfillmentArg,
       }
     );
     let interestExists = false;
