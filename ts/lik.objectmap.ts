@@ -57,6 +57,8 @@ export class ObjectMap<T> {
     const object = this.getMappedUnique(uniqueKey);
   }
 
+  public addSubject = new plugins.smartrx.rxjs.Subject<T>();
+
   /**
    * add object to Objectmap
    * returns false if the object is already in the map
@@ -74,6 +76,7 @@ export class ObjectMap<T> {
     // otherwise lets create it
     const uniqueKey = uni('key');
     this.addMappedUnique(uniqueKey, objectArg);
+    this.addSubject.next(objectArg);
     return uniqueKey;
   }
 
