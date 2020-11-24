@@ -17,6 +17,11 @@ export interface IObjectmapFindFunction<T> {
   (itemArg: T): boolean;
 }
 
+export interface IObjectMapEventData<T> {
+  operation: 'add' | 'remove';
+  payload: T;
+}
+
 /**
  * allows keeping track of objects
  */
@@ -24,7 +29,7 @@ export class ObjectMap<T> {
   private fastMap = new FastMap<T>();
 
   // events
-  public eventSubject = new plugins.smartrx.rxjs.Subject<any>();
+  public eventSubject = new plugins.smartrx.rxjs.Subject<IObjectMapEventData<T>>();
 
   /**
    * returns a new instance
@@ -57,8 +62,6 @@ export class ObjectMap<T> {
     const object = this.getMappedUnique(uniqueKey);
   }
 
-  public addSubject = new plugins.smartrx.rxjs.Subject<T>();
-
   /**
    * add object to Objectmap
    * returns false if the object is already in the map
@@ -76,7 +79,10 @@ export class ObjectMap<T> {
     // otherwise lets create it
     const uniqueKey = uni('key');
     this.addMappedUnique(uniqueKey, objectArg);
-    this.addSubject.next(objectArg);
+    this.eventSubject.next({
+      operation: 'add',
+      payload: objectArg
+    });
     return uniqueKey;
   }
 
@@ -153,7 +159,10 @@ export class ObjectMap<T> {
     } else {
       const keyToUse = keys[0];
       const removedItem = this.fastMap.removeFromMap(keyToUse);
-      this.eventSubject.next('remove');
+      this.eventSubject.next({
+        operation: 'remove',
+        payload: removedItem
+      });
       return removedItem;
     }
   }
@@ -183,7 +192,10 @@ export class ObjectMap<T> {
     if (this.checkForObject(objectArg)) {
       const keyArg = this.getKeyForObject(objectArg);
       const removedObject = this.fastMap.removeFromMap(keyArg);
-      this.eventSubject.next('remove');
+      this.eventSubject.next({
+        operation: 'remove',
+        payload: removedObject
+      });
       return removedObject;
     }
     return null;
